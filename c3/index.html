@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+  <title>Creative 3</title>
+</head>
+
+<body class="center">
+  <div id="app">
+    <h1>Create Web Gen</h1>
+    <p>
+      The next generation website idea generator
+    </p>
+    <form v-on:submit.prevent="newIdea">
+      <label>Hit enter to discover a magical topic for your next website!</label>
+      <br />
+      <input type="image" src="funbegins.jpg" alt="Look for ideas">
+    </form>
+
+    <h3 v-if="ideas.length != 0">Create a website about:</h3>
+    <div v-for="idea in ideas">
+      <hr>
+      <img v-bind:src="idea.img" alt="An Awesome Picture"/>
+      <h3>{{idea.adj}} {{idea.noun}}</h3>
+      <div class="flex-container">
+        <div class="flex-item">
+          <h4>{{idea.adj}} (adjective)</h4>
+          <p>
+            {{idea.adjDef}}
+          </p>
+        </div>
+        <div class="flex-item left-border">
+          <h4>{{idea.noun}} (noun)</h4>
+          <p>
+            {{idea.nounDef}}
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+<footer class="center">
+  <a href="https://github.com/cgrimm013/CreativeProjects">Github Repo</a>
+</footer>
+
+</html>

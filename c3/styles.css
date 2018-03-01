@@ -1,0 +1,24 @@
+body {
+  font-family: 'Lora', serif;
+  margin-bottom: 50px !important;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-item {
+  width: 49%;
+  padding: 10px
+}
+
+.left-border {
+  border-left: 2px solid purple
+}
+
+.center {
+  text-align: center;
+  width: 70%;
+  margin: auto
+}
