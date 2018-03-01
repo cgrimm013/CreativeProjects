@@ -30,7 +30,9 @@
     <div v-for="idea in ideas">
       <hr>
       <img class="image" v-bind:src="idea.img" alt="An Awesome Picture"/>
-      <h3>{{idea.adj}} {{idea.noun}}</h3>
+      <h3>{{idea.adj}} {{idea.noun}} </h3>
+      <button class="remove" v-on:click="removeIdea(idea)">Remove Idea</button>
+      <br />
       <div class="flex-container">
         <div class="flex-item">
           <h4>{{idea.adj}} (adjective)</h4>

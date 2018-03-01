@@ -4,6 +4,13 @@ var app = new Vue({
     ideas: []
   },
   methods: {
+    removeIdea: function(idea){
+      console.log(idea);
+      var index = this.ideas.indexOf(idea);
+      console.log(index);
+      this.ideas.splice(index, 1);
+      console.log(this.ideas);
+    },
     newIdea: function() {
       this.getWord('adjective', (adj) => {
         console.log(adj);
