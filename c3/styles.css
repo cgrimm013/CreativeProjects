@@ -1,6 +1,35 @@
 body {
   font-family: 'Lora', serif;
   margin-bottom: 50px !important;
+  color: #35495e
+}
+
+h1{
+  color: #42b883;
+  margin-bottom: 0px;
+  font-size: 3em;
+}
+
+.description{
+  color: #35495e;
+}
+
+p {
+  color: #35495e;
+}
+
+input{
+  margin-top: 10px;
+}
+
+.disclaimer{
+  color: red;
+  font-size: 10px;
+  width: 50%;
+  margin: auto;
+  border: 2px solid red;
+  padding: 5px;
+  margin-top: 10px;
 }
 
 .flex-container {
@@ -13,8 +42,12 @@ body {
   padding: 10px
 }
 
+.image{
+  max-width: 100%
+}
+
 .left-border {
-  border-left: 2px solid purple
+  border-left: 2px solid #42b883
 }
 
 .center {

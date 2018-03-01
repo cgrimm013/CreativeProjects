@@ -9,15 +9,26 @@ var app = new Vue({
         console.log(adj);
         this.getWord('noun', (noun) => {
           console.log(noun);
-          let idea = {
-            adj: adj.word,
-            adjDef: adj.results[0].definition,
-            noun: noun.word,
-            nounDef: noun.results[0].definition
-          }
-          this.ideas.unshift(idea)
+          this.getImage(noun.word,(image) => {
+            let idea = {
+              img: image.items[0].link,
+              adj: adj.word,
+              adjDef: adj.results[0].definition,
+              noun: noun.word,
+              nounDef: noun.results[0].definition
+            }
+            this.ideas.unshift(idea)
+          });
         });
       });
+    },
+    getImage: function(word, callback){
+      let url = `https://www.googleapis.com/customsearch/v1?q=${word}&cx=010548783614037141903%3Ahdf4ddxx1te&searchType=image&key=AIzaSyAbdOEe7mYFI6WaH5OhAK0gRows3N2o9gQ`;
+      fetch(url).then(response =>{
+        return response.json();
+      }).then(callback).catch(err => {
+        console.error(err);
+      })
     },
     getWord: function(type, callback) {
       var request = new Request('https://wordsapiv1.p.mashape.com/words/?random=true&partOfSpeech=' + type, {

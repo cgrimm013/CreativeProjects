@@ -10,19 +10,26 @@
 <body class="center">
   <div id="app">
     <h1>Create Web Gen</h1>
-    <p>
-      The next generation website idea generator
+    <p class="description">
+      <i>The next generation website idea generator</i>
     </p>
+    <hr />
     <form v-on:submit.prevent="newIdea">
-      <label>Hit enter to discover a magical topic for your next website!</label>
+      <label class="description">Click the picture to discover a magical topic for your next website!</label>
       <br />
       <input type="image" src="funbegins.jpg" alt="Look for ideas">
     </form>
 
+    <div class="disclaimer">
+      DISCLAIMER:
+      <br />
+      This grabs a picture based on the noun that is discovered and comes with no warranty of any kind. We are not liable for any scarring to the extent of applicable law.
+    </div>
+
     <h3 v-if="ideas.length != 0">Create a website about:</h3>
     <div v-for="idea in ideas">
       <hr>
-      <img v-bind:src="idea.img" alt="An Awesome Picture"/>
+      <img class="image" v-bind:src="idea.img" alt="An Awesome Picture"/>
       <h3>{{idea.adj}} {{idea.noun}}</h3>
       <div class="flex-container">
         <div class="flex-item">
